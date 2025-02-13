@@ -1,1 +1,3 @@
-print "hola"
+import random
+import json
+
