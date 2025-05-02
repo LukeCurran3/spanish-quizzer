@@ -22,16 +22,16 @@ def add_word(word_list):
 
 def quiz(word_list):
     if not word_list:
-        print("Necasitas poner palabras para aprender primero!")
+        print("Necasitas agregar palabras para aprender primero!")
         return
     quiz_words = list(word_list.keys())
     random.shuffle(quiz_words)
     response = ""
     count = 0
     print('La hora de examen! Escribi "Para" para parar la programa')
-    while response != "para" and count <= len(word_list):
+    while response != "para" and count < len(word_list):
         span_word = quiz_words[count]
-        eng_word = quiz_words[span_word]["English:"]
+        eng_word = word_list[span_word]["English:"]
         print(eng_word + "/n")
         response = input("Tranduction: ")
         
@@ -41,7 +41,11 @@ def quiz(word_list):
             print("Muy Bien!")
         else:
             print("Incorrecto")
-    count+=1
+        count+=1
+    return("Has aprendido todas las palabras")
+
+
+
 
 
         
